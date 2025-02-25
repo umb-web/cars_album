@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ noticia.titulo }}</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+	<div class="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
+		<h1 class="text-3xl font-bold mb-4">{{ noticia.titulo }}</h1>
+
+		{% if noticia.foto %}
+		<img src="{{ noticia.foto.url }}" alt="{{ noticia.titulo }}"
+			class="w-full h-auto rounded-lg shadow-md mb-4">
+		{% endif %}
+
+		<p class="text-gray-600 text-sm mb-2">
+			<strong>Fecha de publicación:</strong> {{ noticia.fecha }}
+		</p>
+
+		<p class="text-lg leading-relaxed text-gray-800">{{ noticia.detalle }}</p>
+
+		<a href="{% url 'noticias' %}"
+			class="inline-block mt-6 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-blue-700">
+			Volver a Noticias
+		</a>
+	</div>
+
+</body>
+
+</html>

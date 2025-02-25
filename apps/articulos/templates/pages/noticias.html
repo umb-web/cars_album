@@ -1,0 +1,44 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<div class="m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+	{% for articulo in noticias %}
+	<div class="bg-white shadow-lg rounded-2xl overflow-hidden p-4 transition-transform transform hover:scale-105">
+		<a href="{% url 'detalle_noticia' articulo.id %}" class="block">
+			{% if articulo.foto %}
+			<img src="{{ articulo.foto.url }}" alt="{{ articulo.titulo }}"
+				class="w-full h-48 object-cover rounded-lg">
+			{% endif %}
+		</a>
+		<div class="p-4">
+			<a href="{% url 'detalle_noticia' articulo.id %}" class="block">
+				<h2
+					class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
+					{{ articulo.titulo }}
+				</h2>
+			</a>
+			<p class="text-gray-600 mt-2 line-clamp-2">{{ articulo.resumen }}</p>
+			<div class="mt-4 flex items-center justify-between">
+				<span class="text-sm text-gray-500">
+					<strong>Fecha:</strong> {{ articulo.fecha }}
+				</span>
+				<span class="px-3 py-1 text-sm font-medium rounded-full 
+                    {% if articulo.publicada %} bg-green-200 text-green-800 
+                    {% else %} bg-red-200 text-red-800 
+                    {% endif %}">
+					{% if articulo.publicada %} Publicado {% else %} No Publicado {% endif %}
+				</span>
+			</div>
+			<div class="mt-4">
+				<a href="{% url 'detalle_noticia' articulo.id %}"
+					class="block text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300">
+					Ver más
+				</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
