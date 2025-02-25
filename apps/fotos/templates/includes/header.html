@@ -1,7 +1,18 @@
-<header class="flex justify-center items-center flex-wrap bg-gray-100 shadow-xl p-8">
-	<ul class="flex w-2/3 justify-between flex-wrap font-semibold text-2xl">
-		<li><a href="{% url 'admin:index' %}">Admin</a></li>
-		<li><a href="{% url 'fotos' %}">Album</a></li>
-		<li><a href="{% url 'noticias' %}">Articulos</a></li>
-	</ul>
+<header class="bg-gray-100 shadow-xl p-8">
+	<div class="container mx-auto flex flex-col items-center md:flex-row md:justify-between">
+		<button class="md:hidden text-2xl mb-4" id="menu-btn">☰</button>
+		<ul class="hidden md:flex w-full justify-between items-center font-semibold text-2xl space-y-4 md:space-y-0 md:space-x-8 text-center"
+			id="menu">
+			<li><a href="{% url 'admin:index' %}" class="block p-2">Admin</a></li>
+			<li><a href="{% url 'fotos' %}" class="block p-2">Album</a></li>
+			<li><a href="{% url 'noticias' %}" class="block p-2">Artículos</a></li>
+			<li><a href="" class="block p-2">Ej</a></li>
+		</ul>
+	</div>
 </header>
+
+<script>
+	document.getElementById('menu-btn').addEventListener('click', function () {
+		document.getElementById('menu').classList.toggle('hidden');
+	});
+</script>
