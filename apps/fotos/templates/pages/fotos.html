@@ -1,9 +1,11 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow">
 <section class="flex justify-center flex-wrap my-4">
 	{% for foto in fotos %}
+
 	<div
         class="border border-gray-300 w-64 h-84 rounded-xl shadow-lg m-4 transition-transform transform hover:scale-105"
       >
@@ -44,5 +46,6 @@
 	{% endfor %}
 
 </section>
+</main>
 {% endblock %}
 
