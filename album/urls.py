@@ -39,6 +39,7 @@ urlpatterns = [
     path("", inicio, name="inicio"),
     path("fotos/", include("apps.fotos.urls")),
     path("noticias/", include("apps.articulos.urls")),
+    path("spacex/", include("apps.spacex.urls")),
 ]
 
 if settings.DEBUG:

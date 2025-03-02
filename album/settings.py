@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "apps.fotos",
     "apps.articulos",
+    "apps.spacex",
 ]
 
 MIDDLEWARE = [
