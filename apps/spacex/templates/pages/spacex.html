@@ -1,5 +1,14 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<h1>HOLA DESDE SPACEX</h1>
+<h1>Launches</h1>
+{% for launch in launches%}
+{% if launch.details %}
+<p>{{launch.mission_name}}</p>
+<p>{{launch.launch_year}}</p>
+<p>{{launch.rocket.rocket_name}} - {{launch.rocket.rocket_type}}</p>
+<p>{{launch.details}}</p>
+</br />
+{% endif %}
+{% endfor %}
 {% endblock %}
