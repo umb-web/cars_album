@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<body class="flex flex-col min-h-screen">
-	<main class="main-content flex-grow">
+<main class="flex flex-col min-h-screen">
+	<section class="main-content flex-grow">
 		<div class="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-lg border border-gray-300">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 				{% if noticia.foto %}
@@ -30,6 +30,6 @@
 			</div>
 		</div>
 
-	</main>
-</body>
+	</section>
+</main>
 {% endblock %}
