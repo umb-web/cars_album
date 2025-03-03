@@ -1,7 +1,12 @@
 {% extends "layous/base.html" %}
 <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 {% block content %}
-<main class="bg-black text-white min-h-screen flex flex-col">
+<style>
+	::-webkit-scrollbar {
+		display: none;
+	}
+</style>
+<main class="pt-28 bg-black text-white min-h-screen flex flex-col">
 
 	<section class="flex justify-center items-center flex-grow">
 		<div class="container px-4 py-8">
