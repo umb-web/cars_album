@@ -1,0 +1,39 @@
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<main class="bg-black text-white min-h-screen flex flex-col">
+
+	<section class="flex justify-center items-center flex-grow">
+		<div class="container px-4 py-8">
+			<div class="lg:flex lg:items-center lg:space-x-8">
+				<div class="lg:w-1/2 mb-8 lg:mb-0">
+					<img src="{{launch.links.mission_patch}}" alt="SpaceX Rocket Launch"
+						class="w-full h-auto object-cover rounded-lg shadow-lg">
+				</div>
+
+				<div class="lg:w-1/2 space-y-6">
+					<div class="flex justify-between items-center">
+						<span
+							class="text-white text-xl font-semibold">{{launch.launch_year}}</span>
+					</div>
+
+					<h1 class="text-4xl font-bold">{{launch.mission_name}}</h1>
+
+					<div class="space-y-2">
+						<p class="text-xl font-bold">
+							{{launch.rocket.rocket_name}} - {{launch.rocket.rocket_type}}
+						</p>
+					</div>
+
+					<p class="text-gray-300 text-lg leading-relaxed">{{launch.details}}</p>
+
+					<div class="pt-4">
+						<a href="{{launch.links.wikipedia}}" target="_blank"
+							class="bg-black hover:bg-white text-white hover:text-black border border-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg">
+							Read More
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>

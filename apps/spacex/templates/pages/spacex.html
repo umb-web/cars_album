@@ -51,7 +51,8 @@
 	<section class="py-4 px-12 flex flex-wrap items-center justify-center gap-8">
 		{% for launch in launches %}
 		{% if launch.details and launch.links.mission_patch %}
-		<a href="https://google.com" target="_blank" class="tracking-tighter relative group w-52 h-52">
+		<a href="{% url 'launch_info' launch.flight_number %}" target="_blank"
+			class="tracking-tighter relative group w-52 h-52">
 			<img src="{{ launch.links.mission_patch }}"
 				class="w-full h-full transition-opacity duration-300 group-hover:opacity-50" />
 
